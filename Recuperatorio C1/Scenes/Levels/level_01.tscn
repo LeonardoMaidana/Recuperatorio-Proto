@@ -1,24 +1,3 @@
 [gd_scene format=3 uid="uid://yhcgkd5vnnsh"]
 
-[ext_resource type="PackedScene" uid="uid://cqwqwvltr321v" path="res://Characters/Player/player.tscn" id="1_l0dwn"]
-[ext_resource type="Texture2D" uid="uid://dsbk1g62k0iqq" path="res://Assets/Merchant Ship/Sprites/Water/Water/Bottom/1.png" id="2_66ail"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(528, 30)
-
 [node name="Level01" type="Node2D" unique_id=779974962]
-
-[node name="Player" parent="." unique_id=1159610334 instance=ExtResource("1_l0dwn")]
-position = Vector2(112, 204)
-
-[node name="Piso" type="StaticBody2D" parent="." unique_id=1846907469]
-position = Vector2(280, 274)
-
-[node name="Piso_collision" type="CollisionShape2D" parent="Piso" unique_id=499101876]
-position = Vector2(-25, -1)
-shape = SubResource("RectangleShape2D_g4v7s")
-
-[node name="Sprite2D" type="Sprite2D" parent="Piso" unique_id=1950448707]
-position = Vector2(-25, -1)
-scale = Vector2(5.5000005, 1)
-texture = ExtResource("2_66ail")

@@ -6,18 +6,18 @@ extends CharacterBody2D
 var gravity: int = 400
 
 func _physics_process(delta: float) -> void:
-	apply_gravity(delta)
-	handle_movement()
-	handle_jump()
+	_gravity(delta)
+	_movement()
+	_jump()
 	move_and_slide()
 
 
-func apply_gravity(delta: float) -> void:
-	if not is_on_floor():
+func _gravity(delta: float) -> void:
+	if !is_on_floor():
 		velocity.y += gravity * delta
 
 
-func handle_movement() -> void:
+func _movement() -> void:
 	var direction: float = Input.get_axis(
 		"move_left",
 		"move_right"
@@ -26,6 +26,6 @@ func handle_movement() -> void:
 	velocity.x = direction * speed
 
 
-func handle_jump() -> void:
+func _jump() -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_force

@@ -1,47 +1,6 @@
 [gd_scene format=3 uid="uid://cqwqwvltr321v"]
 
 [ext_resource type="Script" uid="uid://56ihjevgjtqd" path="res://Characters/Player/player.gd" id="1_6xdwp"]
-[ext_resource type="Texture2D" uid="uid://f6c8bs2ade6l" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 01.png" id="2_osktb"]
-[ext_resource type="Texture2D" uid="uid://b6x7yqg303kax" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 02.png" id="3_7vev3"]
-[ext_resource type="Texture2D" uid="uid://brmnvrsorjgay" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 03.png" id="4_klx3t"]
-[ext_resource type="Texture2D" uid="uid://dqklgba8x3dcg" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 04.png" id="5_r5ew0"]
-[ext_resource type="Texture2D" uid="uid://dtxpu5i7fp681" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 05.png" id="6_yhol4"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_d0u6y"]
-animations = [{
-"frames": [{
-"duration": 0.4,
-"texture": ExtResource("2_osktb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_7vev3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_klx3t")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_r5ew0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_yhol4")
-}],
-"loop": 1,
-"name": &"idle",
-"speed": 3.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gngh"]
-size = Vector2(24, 28)
-
-[node name="Player" type="CharacterBody2D" unique_id=1159610334]
+[node name="Player" type="Node2D" unique_id=464924023]
 script = ExtResource("1_6xdwp")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1606784343]
-sprite_frames = SubResource("SpriteFrames_d0u6y")
-animation = &"idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1755356338]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_3gngh")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1987099300]
