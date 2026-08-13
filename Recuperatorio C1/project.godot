@@ -21,6 +21,10 @@ window/size/viewport_height=288
 window/stretch/mode="viewport"
 window/per_pixel_transparency/allowed=true
 
+[global_group]
+
+player=""
+
 [input]
 
 move_left={

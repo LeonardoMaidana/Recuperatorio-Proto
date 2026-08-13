@@ -36,9 +36,6 @@ func collect_key() -> void:
 	has_key = true
 	update_hud()
 
-	has_key = true
-	update_hud()
-
 
 func open_chest() -> void:
 	if not has_key:
@@ -50,21 +47,6 @@ func open_chest() -> void:
 
 	has_sword = true
 	gold += 100
-
-	current_phase = GamePhase.RETURN
-
-	game_timer.stop()
-	game_timer.wait_time = return_phase_time
-	game_timer.start()
-
-	update_hud()
-
-	if current_phase != GamePhase.KEY:
-		return
-
-	has_sword = true
-	gold += 100
-
 	current_phase = GamePhase.RETURN
 
 	game_timer.stop()
@@ -109,3 +91,7 @@ func update_hud() -> void:
 		hud.set_objective("¡Volvé al inicio con la espada!")
 
 	hud.set_key(has_key)
+
+
+func _on_key_collected() -> void:
+	collect_key()

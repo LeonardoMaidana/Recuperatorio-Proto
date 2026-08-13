@@ -1,7 +1,18 @@
 [gd_scene format=3 uid="uid://b3dedvjkn6ddm"]
 
+[ext_resource type="Script" uid="uid://cjv0ok0haetvl" path="res://Objects/key.gd" id="1_jqamt"]
+[ext_resource type="Texture2D" uid="uid://bi13m82wr7n2u" path="res://Assets/Merchant Ship/Sprites/Chest Key/Idle/1.png" id="1_vxhtd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rt6e2"]
+size = Vector2(8, 16)
+
 [node name="Key" type="Area2D" unique_id=449796823]
+script = ExtResource("1_jqamt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1952616566]
+texture = ExtResource("1_vxhtd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1470645353]
+shape = SubResource("RectangleShape2D_rt6e2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
