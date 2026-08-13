@@ -1,5 +1,27 @@
 [gd_scene format=3 uid="uid://c1hx7votrxrp4"]
 
-[node name="Hud" type="Control" unique_id=1729877560]
-layout_mode = 3
-anchors_preset = 0
+[ext_resource type="Script" uid="uid://bipl5krrxphml" path="res://UI/hud.gd" id="1_ne75i"]
+
+[node name="HUD" type="CanvasLayer" unique_id=168979086]
+script = ExtResource("1_ne75i")
+
+[node name="TimeLabel" type="Label" parent="." unique_id=403648134]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="ObjectiveLabel" type="Label" parent="." unique_id=1049549454]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="KeyLabel" type="Label" parent="." unique_id=831615870]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1.0
+offset_bottom = 23.0
+grow_horizontal = 0

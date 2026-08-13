@@ -1,3 +1,31 @@
 [gd_scene format=3 uid="uid://yhcgkd5vnnsh"]
 
+[ext_resource type="PackedScene" uid="uid://cqwqwvltr321v" path="res://Characters/Player/player.tscn" id="1_66ail"]
+[ext_resource type="Script" uid="uid://cb8w6nokxhkij" path="res://Scenes/Levels/level_manager.gd" id="1_ni7lu"]
+[ext_resource type="Texture2D" uid="uid://dsbk1g62k0iqq" path="res://Assets/Merchant Ship/Sprites/Water/Water/Bottom/1.png" id="2_ni7lu"]
+[ext_resource type="PackedScene" uid="uid://c1hx7votrxrp4" path="res://UI/hud.tscn" id="4_wf6s8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(532, 32)
+
 [node name="Level01" type="Node2D" unique_id=779974962]
+script = ExtResource("1_ni7lu")
+
+[node name="Player" parent="." unique_id=1726063880 instance=ExtResource("1_66ail")]
+position = Vector2(235, 105)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1797658891]
+position = Vector2(256, 272)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=153196002]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=126828253]
+scale = Vector2(5.5416665, 1)
+texture = ExtResource("2_ni7lu")
+
+[node name="GameTimer" type="Timer" parent="." unique_id=1997837162]
+
+[node name="HUD" parent="." unique_id=168979086 instance=ExtResource("4_wf6s8")]
+
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
