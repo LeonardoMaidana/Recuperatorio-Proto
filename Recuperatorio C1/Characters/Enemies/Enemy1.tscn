@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://7kco28dieb30"]
+
+[ext_resource type="Texture2D" uid="uid://b0f1svnxgtrwv" path="res://Assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 01.png" id="1_2qswf"]
+[ext_resource type="Script" uid="uid://dg3cqrhr2l48a" path="res://Scripts/enemy_1.gd" id="1_b7emy"]
+[ext_resource type="Texture2D" uid="uid://w83gbgr2iqru" path="res://Assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 02.png" id="2_b7emy"]
+[ext_resource type="Texture2D" uid="uid://c3lob4sy5qjr" path="res://Assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 03.png" id="3_smpdl"]
+[ext_resource type="Texture2D" uid="uid://by2r4crbmv2fs" path="res://Assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 04.png" id="4_7n5s1"]
+[ext_resource type="Texture2D" uid="uid://vipnra5cfev3" path="res://Assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 05.png" id="5_ux3mj"]
+[ext_resource type="Texture2D" uid="uid://dqe3rn4x8xec" path="res://Assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 06.png" id="6_752lu"]
+[ext_resource type="Texture2D" uid="uid://cj4hc1o7ikl15" path="res://Assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 07.png" id="7_2t4ar"]
+[ext_resource type="Texture2D" uid="uid://ddf8q7oxeu5lv" path="res://Assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 08.png" id="8_57h6r"]
+[ext_resource type="Texture2D" uid="uid://cgybxib00g0fp" path="res://Assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 09.png" id="9_62son"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("1_2qswf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b7emy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_smpdl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7n5s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ux3mj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_752lu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2t4ar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_57h6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_62son")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53b4g"]
+size = Vector2(33.49461, 30.055883)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wg0ho"]
+size = Vector2(43, 26)
+
+[node name="Enemy1" type="CharacterBody2D" unique_id=1130760685]
+script = ExtResource("1_b7emy")
+
+[node name="Enemy1Animation" type="AnimatedSprite2D" parent="." unique_id=631756226]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"idle"
+
+[node name="Enemy1CS" type="CollisionShape2D" parent="." unique_id=141614108]
+visible = false
+position = Vector2(0.50000024, 1.5456977)
+scale = Vector2(0.6269666, 0.7622004)
+shape = SubResource("RectangleShape2D_53b4g")
+
+[node name="Enemy1AreaHitbox" type="Area2D" parent="." unique_id=2120467254]
+
+[node name="Enemy1AreaCS" type="CollisionShape2D" parent="Enemy1AreaHitbox" unique_id=1922040000]
+position = Vector2(1.5, 0)
+shape = SubResource("RectangleShape2D_wg0ho")
+
+[connection signal="body_entered" from="Enemy1AreaHitbox" to="." method="_on_enemy_1_area_hitbox_body_entered"]

@@ -64,7 +64,17 @@ func start_area() -> void:
 
 
 func player_die() -> void:
+	call_deferred("_reload_level")
+
+
+func _reload_level() -> void:
 	get_tree().reload_current_scene()
+
+func is_player_in_front_of_enemy(enemy, player) -> bool:
+	if enemy.direction > 0:
+		return player.global_position.x > enemy.global_position.x
+	else:
+		return player.global_position.x < enemy.global_position.x
 
 
 func win_game() -> void:
@@ -106,4 +116,13 @@ func _on_start_area_reached() -> void:
 
 
 func _on_death_area_player_die() -> void:
+	player_die()
+
+func _on_enemy_1_player_contact(enemy: Variant, player: Variant) -> void:
+	pass
+
+	if has_sword and is_player_in_front_of_enemy(enemy, player):
+		enemy.defeat()
+		return
+
 	player_die()

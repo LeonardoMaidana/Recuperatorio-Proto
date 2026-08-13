@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bshbv8buqi3wa" path="res://Objects/chester.tscn" id="6_taws2"]
 [ext_resource type="PackedScene" uid="uid://dfq0p0cdtaoym" path="res://Objects/StartArea.tscn" id="7_mb1if"]
 [ext_resource type="PackedScene" uid="uid://cof1y3ftsxb8r" path="res://Objects/DeathArea.tscn" id="8_bmcj7"]
+[ext_resource type="PackedScene" uid="uid://7kco28dieb30" path="res://Characters/Enemies/Enemy1.tscn" id="9_j5tiy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(532, 32)
@@ -20,6 +21,7 @@ position = Vector2(95, 242)
 
 [node name="FloorHolder" type="StaticBody2D" parent="." unique_id=1797658891]
 position = Vector2(256, 272)
+scale = Vector2(1.8400012, 1)
 
 [node name="FloorCS" type="CollisionShape2D" parent="FloorHolder" unique_id=153196002]
 shape = SubResource("RectangleShape2D_g4v7s")
@@ -33,18 +35,24 @@ texture = ExtResource("2_ni7lu")
 [node name="HUD" parent="." unique_id=168979086 instance=ExtResource("4_wf6s8")]
 
 [node name="Key" parent="." unique_id=449796823 instance=ExtResource("5_dbq10")]
-position = Vector2(271, 245)
+position = Vector2(456, 245)
 
 [node name="Chester" parent="." unique_id=1155115680 instance=ExtResource("6_taws2")]
-position = Vector2(418, 240)
+position = Vector2(607, 239)
 
 [node name="StartArea" parent="." unique_id=2006439890 instance=ExtResource("7_mb1if")]
+position = Vector2(-134, 2)
 
 [node name="DeathArea" parent="." unique_id=165722944 instance=ExtResource("8_bmcj7")]
 position = Vector2(245, 298)
+scale = Vector2(1.5199994, 1)
+
+[node name="Enemy1" parent="." unique_id=1130760685 instance=ExtResource("9_j5tiy")]
+position = Vector2(328, 241)
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="collected" from="Key" to="." method="_on_key_collected"]
 [connection signal="interacted" from="Chester" to="." method="_on_chester_interacted"]
 [connection signal="reached" from="StartArea" to="." method="_on_start_area_reached"]
 [connection signal="player_die" from="DeathArea" to="." method="_on_death_area_player_die"]
+[connection signal="player_contact" from="Enemy1" to="." method="_on_enemy_1_player_contact"]
