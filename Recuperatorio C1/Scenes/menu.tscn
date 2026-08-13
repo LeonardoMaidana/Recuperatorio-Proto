@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bdxmnyggwomy3"]
+
+[ext_resource type="Script" uid="uid://boaps8m8k0fjk" path="res://Scripts/menu.gd" id="1_1rerr"]
+
+[node name="Menu" type="Control" unique_id=794089732]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1rerr")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1378483449]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0035191663, 0.003519169, 0.0035191642, 1)
+
+[node name="MenuCC" type="CenterContainer" parent="." unique_id=764723655]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuVBoxC" type="VBoxContainer" parent="MenuCC" unique_id=345921235]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="MenuCC/MenuVBoxC" unique_id=1050162545]
+layout_mode = 2
+text = "TREASURE ESCAPE:
+      WILDLANDS"
+
+[node name="PlayButton" type="Button" parent="MenuCC/MenuVBoxC" unique_id=1375250946]
+layout_mode = 2
+text = "JUGAR"
+
+[node name="ExitButton" type="Button" parent="MenuCC/MenuVBoxC" unique_id=1891609858]
+layout_mode = 2
+text = "SALIR"
+
+[connection signal="pressed" from="MenuCC/MenuVBoxC/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MenuCC/MenuVBoxC/ExitButton" to="." method="_on_exit_button_pressed"]

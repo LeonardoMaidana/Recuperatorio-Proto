@@ -399,12 +399,13 @@ sources/0 = SubResource("TileSetAtlasSource_g38v2")
 script = ExtResource("1_ni7lu")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=1336595253]
-position = Vector2(296, -27)
-scale = Vector2(4.192708, 7.3749995)
+z_index = -10
+position = Vector2(248, 110)
+scale = Vector2(2.872933, 5.053507)
 texture = ExtResource("2_g38v2")
 
 [node name="Player" parent="." unique_id=1726063880 instance=ExtResource("1_66ail")]
-position = Vector2(-49, 48)
+position = Vector2(-35, 52)
 
 [node name="GameTimer" type="Timer" parent="." unique_id=1997837162]
 
