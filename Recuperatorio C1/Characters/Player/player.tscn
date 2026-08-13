@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cqwqwvltr321v"]
 
-[ext_resource type="Script" uid="uid://56ihjevgjtqd" path="res://Characters/Player/player.gd" id="1_6xdwp"]
+[ext_resource type="Script" uid="uid://56ihjevgjtqd" path="res://Scripts/player.gd" id="1_6xdwp"]
 [ext_resource type="Texture2D" uid="uid://f6c8bs2ade6l" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 01.png" id="2_osktb"]
 [ext_resource type="Texture2D" uid="uid://b6x7yqg303kax" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 02.png" id="3_7vev3"]
 [ext_resource type="Texture2D" uid="uid://brmnvrsorjgay" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 03.png" id="4_klx3t"]
@@ -36,11 +36,11 @@ size = Vector2(20, 24)
 [node name="Player" type="CharacterBody2D" unique_id=1726063880 groups=["player"]]
 script = ExtResource("1_6xdwp")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=898556200]
+[node name="PlayerAnimation" type="AnimatedSprite2D" parent="." unique_id=898556200]
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=567174820]
+[node name="PlayerCS" type="CollisionShape2D" parent="." unique_id=567174820]
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=719165482]

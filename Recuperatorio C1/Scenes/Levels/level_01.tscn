@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://yhcgkd5vnnsh"]
 
 [ext_resource type="PackedScene" uid="uid://cqwqwvltr321v" path="res://Characters/Player/player.tscn" id="1_66ail"]
-[ext_resource type="Script" uid="uid://cb8w6nokxhkij" path="res://Scenes/Levels/level_manager.gd" id="1_ni7lu"]
+[ext_resource type="Script" uid="uid://cb8w6nokxhkij" path="res://Scripts/level_manager.gd" id="1_ni7lu"]
 [ext_resource type="Texture2D" uid="uid://dsbk1g62k0iqq" path="res://Assets/Merchant Ship/Sprites/Water/Water/Bottom/1.png" id="2_ni7lu"]
 [ext_resource type="PackedScene" uid="uid://c1hx7votrxrp4" path="res://UI/hud.tscn" id="4_wf6s8"]
 [ext_resource type="PackedScene" uid="uid://b3dedvjkn6ddm" path="res://Objects/Key.tscn" id="5_dbq10"]
+[ext_resource type="PackedScene" uid="uid://bshbv8buqi3wa" path="res://Objects/chester.tscn" id="6_taws2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(532, 32)
@@ -30,7 +31,11 @@ texture = ExtResource("2_ni7lu")
 [node name="HUD" parent="." unique_id=168979086 instance=ExtResource("4_wf6s8")]
 
 [node name="Key" parent="." unique_id=449796823 instance=ExtResource("5_dbq10")]
-position = Vector2(419, 227)
+position = Vector2(271, 245)
+
+[node name="Chester" parent="." unique_id=1155115680 instance=ExtResource("6_taws2")]
+position = Vector2(418, 240)
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="collected" from="Key" to="." method="_on_key_collected"]
+[connection signal="interacted" from="Chester" to="." method="_on_chester_interacted"]

@@ -37,14 +37,15 @@ func collect_key() -> void:
 	update_hud()
 
 
-func open_chest() -> void:
+func open_chester() -> void:
+	if current_phase != GamePhase.KEY:
+		return
+
 	if not has_key:
 		hud.set_objective("Necesitas encontrar la llave.")
 		return
 
-	if current_phase != GamePhase.KEY:
-		return
-
+	has_key = false
 	has_sword = true
 	gold += 100
 	current_phase = GamePhase.RETURN
@@ -54,7 +55,6 @@ func open_chest() -> void:
 	game_timer.start()
 
 	update_hud()
-
 
 func reach_start() -> void:
 	if current_phase != GamePhase.RETURN:
@@ -95,3 +95,7 @@ func update_hud() -> void:
 
 func _on_key_collected() -> void:
 	collect_key()
+
+
+func _on_chester_interacted() -> void:
+	open_chester()

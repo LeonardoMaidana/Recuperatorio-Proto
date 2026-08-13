@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bshbv8buqi3wa"]
+
+[ext_resource type="Texture2D" uid="uid://bktmngh4sjqqs" path="res://Assets/Merchant Ship/Sprites/Chest/Idle/1.png" id="1_4dosg"]
+[ext_resource type="Script" uid="uid://dp12atllfd4dc" path="res://Scripts/chester.gd" id="1_rqtuc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqtuc"]
+size = Vector2(30, 32)
+
+[node name="Chester" type="Area2D" unique_id=1155115680]
+script = ExtResource("1_rqtuc")
+
+[node name="ChesterSprite" type="Sprite2D" parent="." unique_id=2117391635]
+texture = ExtResource("1_4dosg")
+
+[node name="ChesterCS" type="CollisionShape2D" parent="." unique_id=884738808]
+shape = SubResource("RectangleShape2D_rqtuc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
