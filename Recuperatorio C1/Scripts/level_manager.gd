@@ -126,3 +126,7 @@ func _on_enemy_1_player_contact(enemy: Variant, player: Variant) -> void:
 		return
 
 	player_die()
+
+
+func _on_spikes_player_die() -> void:
+	player_die()

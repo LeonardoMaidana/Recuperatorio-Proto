@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dfq0p0cdtaoym" path="res://Objects/StartArea.tscn" id="7_mb1if"]
 [ext_resource type="PackedScene" uid="uid://cof1y3ftsxb8r" path="res://Objects/DeathArea.tscn" id="8_bmcj7"]
 [ext_resource type="PackedScene" uid="uid://7kco28dieb30" path="res://Characters/Enemies/Enemy1.tscn" id="9_j5tiy"]
+[ext_resource type="PackedScene" uid="uid://mqthpb0k8dqk" path="res://Objects/Spikes.tscn" id="10_qelns"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(532, 32)
@@ -17,7 +18,7 @@ size = Vector2(532, 32)
 script = ExtResource("1_ni7lu")
 
 [node name="Player" parent="." unique_id=1726063880 instance=ExtResource("1_66ail")]
-position = Vector2(95, 242)
+position = Vector2(-56, 242)
 
 [node name="FloorHolder" type="StaticBody2D" parent="." unique_id=1797658891]
 position = Vector2(256, 272)
@@ -41,7 +42,7 @@ position = Vector2(456, 245)
 position = Vector2(607, 239)
 
 [node name="StartArea" parent="." unique_id=2006439890 instance=ExtResource("7_mb1if")]
-position = Vector2(-134, 2)
+position = Vector2(-208, 4)
 
 [node name="DeathArea" parent="." unique_id=165722944 instance=ExtResource("8_bmcj7")]
 position = Vector2(245, 298)
@@ -50,9 +51,13 @@ scale = Vector2(1.5199994, 1)
 [node name="Enemy1" parent="." unique_id=1130760685 instance=ExtResource("9_j5tiy")]
 position = Vector2(328, 241)
 
+[node name="Spikes" parent="." unique_id=1818383718 instance=ExtResource("10_qelns")]
+position = Vector2(137, 240)
+
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="collected" from="Key" to="." method="_on_key_collected"]
 [connection signal="interacted" from="Chester" to="." method="_on_chester_interacted"]
 [connection signal="reached" from="StartArea" to="." method="_on_start_area_reached"]
 [connection signal="player_die" from="DeathArea" to="." method="_on_death_area_player_die"]
 [connection signal="player_contact" from="Enemy1" to="." method="_on_enemy_1_player_contact"]
+[connection signal="player_die" from="Spikes" to="." method="_on_spikes_player_die"]

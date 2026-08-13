@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://cqwqwvltr321v"]
 
 [ext_resource type="Script" uid="uid://56ihjevgjtqd" path="res://Scripts/player.gd" id="1_6xdwp"]
-[ext_resource type="Texture2D" uid="uid://f6c8bs2ade6l" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 01.png" id="2_osktb"]
-[ext_resource type="Texture2D" uid="uid://b6x7yqg303kax" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 02.png" id="3_7vev3"]
-[ext_resource type="Texture2D" uid="uid://brmnvrsorjgay" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 03.png" id="4_klx3t"]
-[ext_resource type="Texture2D" uid="uid://dqklgba8x3dcg" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 04.png" id="5_r5ew0"]
-[ext_resource type="Texture2D" uid="uid://dtxpu5i7fp681" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 05.png" id="6_yhol4"]
+[ext_resource type="Texture2D" uid="uid://domop3c7yx2vh" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="2_osktb"]
+[ext_resource type="Texture2D" uid="uid://bjdvuck0wswm7" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 02.png" id="3_7vev3"]
+[ext_resource type="Texture2D" uid="uid://nc6sqgc6r5or" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 03.png" id="4_klx3t"]
+[ext_resource type="Texture2D" uid="uid://bm2fvf7j0vxqu" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 04.png" id="5_r5ew0"]
+[ext_resource type="Texture2D" uid="uid://c2vd47nwfc62w" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 05.png" id="6_yhol4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
 "frames": [{
-"duration": 0.4,
+"duration": 1.0,
 "texture": ExtResource("2_osktb")
 }, {
 "duration": 1.0,
