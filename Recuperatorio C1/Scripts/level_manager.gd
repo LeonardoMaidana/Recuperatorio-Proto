@@ -56,7 +56,7 @@ func open_chester() -> void:
 
 	update_hud()
 
-func reach_start() -> void:
+func start_area() -> void:
 	if current_phase != GamePhase.RETURN:
 		return
 
@@ -99,3 +99,7 @@ func _on_key_collected() -> void:
 
 func _on_chester_interacted() -> void:
 	open_chester()
+
+
+func _on_start_area_reached() -> void:
+	start_area()
