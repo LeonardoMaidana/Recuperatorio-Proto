@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b3dedvjkn6ddm" path="res://Objects/Key.tscn" id="5_dbq10"]
 [ext_resource type="PackedScene" uid="uid://bshbv8buqi3wa" path="res://Objects/chester.tscn" id="6_taws2"]
 [ext_resource type="PackedScene" uid="uid://dfq0p0cdtaoym" path="res://Objects/StartArea.tscn" id="7_mb1if"]
+[ext_resource type="PackedScene" uid="uid://cof1y3ftsxb8r" path="res://Objects/DeathArea.tscn" id="8_bmcj7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(532, 32)
@@ -39,7 +40,11 @@ position = Vector2(418, 240)
 
 [node name="StartArea" parent="." unique_id=2006439890 instance=ExtResource("7_mb1if")]
 
+[node name="DeathArea" parent="." unique_id=165722944 instance=ExtResource("8_bmcj7")]
+position = Vector2(245, 298)
+
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="collected" from="Key" to="." method="_on_key_collected"]
 [connection signal="interacted" from="Chester" to="." method="_on_chester_interacted"]
 [connection signal="reached" from="StartArea" to="." method="_on_start_area_reached"]
+[connection signal="player_die" from="DeathArea" to="." method="_on_death_area_player_die"]

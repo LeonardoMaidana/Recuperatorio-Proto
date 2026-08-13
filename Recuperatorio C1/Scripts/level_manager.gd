@@ -63,7 +63,7 @@ func start_area() -> void:
 	win_game()
 
 
-func player_died() -> void:
+func player_die() -> void:
 	get_tree().reload_current_scene()
 
 
@@ -77,7 +77,7 @@ func win_game() -> void:
 
 
 func _on_game_timer_timeout() -> void:
-	player_died()
+	player_die()
 
 
 func update_hud() -> void:
@@ -103,3 +103,7 @@ func _on_chester_interacted() -> void:
 
 func _on_start_area_reached() -> void:
 	start_area()
+
+
+func _on_death_area_player_die() -> void:
+	player_die()
