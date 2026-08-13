@@ -7,7 +7,7 @@ enum GamePhase {
 }
 
 @export var first_phase_time: float = 60.0
-@export var return_phase_time: float = 30.0
+@export var return_phase_time: float = 15.0
 
 var current_phase: GamePhase = GamePhase.KEY
 var has_key: bool = false
